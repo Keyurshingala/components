@@ -26,11 +26,11 @@
 
     @NonNull
     public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new VH(VpBanerBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        return new VH(CustomItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
     public void onBindViewHolder(VH holder, int position) {
-        VpBanerBinding bind = holder.binding;
+        CustomItemBinding bind = holder.binding;
         Object data = list.get(position);
 
         bind.getRoot().setOnClickListener(v -> customClick.onRootClick(data, position));
@@ -41,9 +41,9 @@
     }
 
     public static class VH extends RecyclerView.ViewHolder {
-        VpBanerBinding binding;
+        CustomItemBinding binding;
 
-        public VH(@NonNull VpBanerBinding binding) {
+        public VH(@NonNull CustomItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
