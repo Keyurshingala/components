@@ -1,6 +1,4 @@
-# Rv Adapter
-  
-  
+# Rv Adapter Kt and Java
     class CustomAdapter(var activity: Activity, var list: List<Any>, val click: ((Any) -> Unit)? = null) : RecyclerView.Adapter<CustomAdapter.VH>() {
 
       override fun onBindViewHolder(holder: VH, pos: Int) {
@@ -15,6 +13,49 @@
       override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = VH(RvCustomBinding.inflate(LayoutInflater.from(parent.context)))
       class VH(var binding: RvCustomBinding) : RecyclerView.ViewHolder(binding.root)
       override fun getItemCount() = list.size
+    }
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+    public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.VH> {
+    Context context;
+    List<Object> list;
+
+    public CustomAdapter(Context context, List<Object> list) {
+        this.context = context;
+        this.list = list;
+    }
+
+    @NonNull
+    public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new VH(VpBanerBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+    }
+
+    public void onBindViewHolder(VH holder, int position) {
+        VpBanerBinding bind = holder.binding;
+        Object data = list.get(position);
+
+        bind.getRoot().setOnClickListener(v -> customClick.onRootClick(data, position));
+    }
+
+    public int getItemCount() {
+        return list.size();
+    }
+
+    public static class VH extends RecyclerView.ViewHolder {
+        VpBanerBinding binding;
+
+        public VH(@NonNull VpBanerBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+    }
+
+    CustomClick customClick;
+    public void setOnCustomClickListener(CustomClick customClick) {
+        this.customClick = customClick;
+    }
+    public interface CustomClick {
+        void onRootClick(Object data, int pos);
+    }
     }
     
 # common deps
