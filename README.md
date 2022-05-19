@@ -15,4 +15,4 @@
       override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = VH(RvCustomBinding.inflate(LayoutInflater.from(parent.context)))
       class VH(var binding: RvCustomBinding) : RecyclerView.ViewHolder(binding.root)
       override fun getItemCount() = list.size
-  }
+    }
