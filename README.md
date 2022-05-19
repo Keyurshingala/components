@@ -1,4 +1,4 @@
-# Rv Adapter Kt and Java
+# Rv & Vp2 Adapter Kt and Java
     class CustomAdapter(var activity: Activity, var list: List<Any>, val click: ((Any) -> Unit)? = null) : RecyclerView.Adapter<CustomAdapter.VH>() {
 
       override fun onBindViewHolder(holder: VH, pos: Int) {
