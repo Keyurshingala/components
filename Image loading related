@@ -1,0 +1,25 @@
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    
+    //koil
+    implementation("io.coil-kt:coil:2.1.0")
+    
+    //picaso
+    implementation 'com.squareup.picasso:picasso:2.8'
+    
+    
+    if loading dose not work try one of this in AndroidManifest.xml
+    
+     android:hardwareAccelerated="true"
+     android:largeHeap="true"
+     android:usesCleartextTraffic="true"
+     
+    
+    load lower size when image is toLarge
+     
+     
+
+    
+    
+    
