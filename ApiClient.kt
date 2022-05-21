@@ -1,4 +1,3 @@
-package com.onehubtv.service
 
 import android.app.Activity
 import android.app.Dialog
@@ -10,12 +9,6 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import com.onehubtv.R
-import com.onehubtv.adapter.MovieSubCatAdapter
-import com.onehubtv.databinding.DialogNoNetBinding
-import com.onehubtv.databinding.DialogProgressBinding
-import com.onehubtv.databinding.RvMovieCatBinding
-import com.onehubtv.utility.BASE_URL
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
